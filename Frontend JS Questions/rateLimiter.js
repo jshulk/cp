@@ -13,7 +13,7 @@ const rateLimiter = (fn, limit, interval) => {
     //if we are check if have reached our limit for this second
     // after 1000ms expires, reset the requestCount
     if (requestCount < limit) {
-      fn.apply(args);
+      fn.apply(this, args);
       requestCount++;
     }
     if (!timeout) {
